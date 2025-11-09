@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>認証成功</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{background:#000;color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;height:100vh;font-family:sans-serif;text-align:center}
+img{border-radius:50%;width:100px;height:100px;margin-bottom:20px}
+.success{color:#00bfff;font-size:24px;margin:10px}
+p{color:#9ad4ff}
+</style>
+</head>
+<body>
+<img src="{{ avatar }}">
+<div class="success">認証成功！</div>
+<p>{{ username }} さん、ようこそ！</p>
+<script>
+setTimeout(()=>window.close(),5000);
+</script>
+</body>
+</html>
