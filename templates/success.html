@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>認証成功</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<title>Aqq Verify | 認証成功</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body{background:#000;color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;height:100vh;font-family:sans-serif;text-align:center}
-img{border-radius:50%;width:100px;height:100px;margin-bottom:20px}
-.success{color:#00bfff;font-size:24px;margin:10px}
-p{color:#9ad4ff}
+body { 
+    background-color:#000; 
+    color:#0bf; 
+    font-family:Arial, sans-serif; 
+    text-align:center; 
+    margin:0; 
+    padding:0;
+}
+.container { 
+    margin-top:15vh; 
+}
+h1 { 
+    font-size:36px; 
+    color:#0bf; 
+}
+p { 
+    font-size:18px; 
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #0bf;
+    margin-top: 20px;
+}
 </style>
+<script>
+setTimeout(() => { window.close(); }, 5000);
+</script>
 </head>
 <body>
-<img src="{{ avatar }}">
-<div class="success">認証成功！</div>
-<p>{{ username }} さん、ようこそ！</p>
-<script>
-setTimeout(()=>window.close(),5000);
-</script>
+<div class="container">
+    <h1>{{ display_name }} さん、ようこそ！</h1>
+    <img src="{{ avatar }}" alt="User Avatar" class="avatar">
+    <p>この画面は5秒後に閉じられます。</p>
+</div>
 </body>
 </html>
