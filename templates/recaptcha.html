@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Aqq Verify | reCAPCHA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<style>
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background-color: #111;
+    padding: 30px;
+    border: 2px solid #00bfff;
+    border-radius: 15px;
+    text-align: center;
+}
+h1 {
+    color: #00bfff;
+    margin-bottom: 20px;
+}
+button {
+    background-color: #00bfff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+button:hover {
+    background-color: #0095d5;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>認証フォーム</h1>
+    <form action="/verify?uid={{ uid }}" method="POST">
+        <div class="g-recaptcha" data-sitekey="{{ site_key }}"></div>
+        <button type="submit">認証する</button>
+    </form>
+    <p>VPNやプロキシは使用できません。</p>
+</div>
+</body>
+</html>
