@@ -1,49 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>アクセスブロック</title>
-  <style>
-    :root{--bg:#000;--card:#070707;--accent:#00bfff;--muted:#9fbfdc}
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#000,#020222);font-family:Inter, "Noto Sans JP", system-ui, Arial}
-    .wrap{width:min(780px,95%);padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(0,191,255,0.08);box-shadow:0 18px 60px rgba(0,0,0,0.7);display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:center}
-    .left h1{margin:0 0 8px;color:var(--accent);font-size:22px}
-    .left p{margin:0;color:#dfeefb}
-    .reason{margin-top:12px;padding:14px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);color:#cfeeff}
-    .right{display:flex;flex-direction:column;gap:12px;align-items:center}
-    .invite-btn{
-      display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;border:2px solid var(--accent);
-      color:var(--accent);background:transparent;text-decoration:none;font-weight:700;cursor:pointer;transition:all .18s;
-    }
-    .invite-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,191,255,0.12)}
-    .small{font-size:13px;color:var(--muted);text-align:center}
-    .logo{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6ad0ff);box-shadow:0 8px 28px rgba(0,191,255,0.08)}
-    @media(max-width:760px){.wrap{grid-template-columns:1fr;text-align:center}.right{order:-1}}
-  </style>
+<meta charset="UTF-8">
+<title>アクセスブロック</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { background-color:#000; color:#f0f; font-family:Arial, sans-serif; text-align:center; margin:0; padding:0;}
+.container { margin-top:20vh; }
+h1 { font-size:36px; color:#f0f; }
+a { color:#0bf; text-decoration:none; font-size:18px;}
+</style>
 </head>
 <body>
-  <div class="wrap" role="main" aria-labelledby="blocked-title">
-    <div class="left">
-      <h1 id="blocked-title">アクセスがブロックされました</h1>
-      <p>ご利用の接続は当サービスのセキュリティポリシーによりブロックされています。VPN やプロキシ、またはブラックリストに該当する可能性があります。</p>
-      <div class="reason">
-        <strong>理由：</strong> {{ reason }}<br>
-        <strong>IP：</strong> {{ ip }}
-      </div>
-      <div style="margin-top:14px" class="small">
-        ブロックに心当たりがある場合、下の「サポートサーバーに参加」から連絡してください。運営が確認して解除できる場合があります。
-      </div>
-    </div>
-
-    <div class="right" aria-hidden="false">
-      <div class="logo" role="img" aria-label="support logo"></div>
-      <a class="invite-btn" id="supportBtn" href="{{ invite }}" target="_blank" rel="noopener noreferrer">
-        サポートサーバーに参加
-      </a>
-      <div class="small">サポートサーバーに参加して、スタッフに直接お問い合わせください。</div>
-    </div>
-  </div>
+<div class="container">
+<h1>アクセス拒否</h1>
+<p>{{ reason }}<br>IP: {{ ip }}<br><a href="{{ invite }}" target="_blank">サポートサーバーに参加</a></p>
+</div>
 </body>
 </html>
